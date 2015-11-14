@@ -1,0 +1,32 @@
+<div ng-controller="MainController">
+	<table class="table table-condensed">
+		<tr>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th>7am</th>
+			<th ng-repeat="slot in slots">&nbsp;</th>
+			<th>9am</th>
+			<th ng-repeat="slot in slots">&nbsp;</th>
+			<th>11am</th>
+			<th ng-repeat="slot in slots">&nbsp;</th>
+			<th>1pm</th>
+			<th ng-repeat="slot in slots">&nbsp;</th>
+			<th>3am</th>
+			<th ng-repeat="slot in slots">&nbsp;</th>
+			<th>5am</th>
+			<th ng-repeat="slot in slots">&nbsp;</th>
+		</tr>
+		
+		<tr ng-repeat="reservation in reservations">
+			<td>
+				<button type="button" class="btn btn-default btn-xs">Select</button>
+			</td>
+			<td>${{reservation.price}}</td>
+			<td>{{reservation.startingPoint}}</td>
+			<td>{{reservation.endingPoint}}</td>
+			<td ng-repeat="transit in reservation.itinerary" colspan="{{transit.slots}}" style="{{transit.style}}">{{transit.name}}</td>
+		</tr>
+	</table>
+</div>
