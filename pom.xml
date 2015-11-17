@@ -21,15 +21,17 @@
         <dependency>
         	<groupId>junit</groupId>
         	<artifactId>junit</artifactId>
+        	<scope>test</scope>
         </dependency>
         <dependency>
         	<groupId>org.mockito</groupId>
         	<artifactId>mockito-core</artifactId>
+        	<scope>test</scope>
         </dependency>
         <dependency>
         	<groupId>org.springframework</groupId>
-        	<artifactId>spring-test</artifactId>
-        	<version>4.1.6.RELEASE</version><!--$NO-MVN-MAN-VER$-->
+        	<artifactId>spring-test</artifactId><!--$NO-MVN-MAN-VER$-->
+        	<scope>test</scope>
         </dependency>
         <dependency>
         	<groupId>org.springframework</groupId>
@@ -39,6 +41,10 @@
         	<groupId>xml-resolver</groupId>
         	<artifactId>xml-resolver</artifactId>
         	<version>1.2</version>
+        </dependency>
+        <dependency>
+        	<groupId>com.h2database</groupId>
+        	<artifactId>h2</artifactId>
         </dependency>
     </dependencies>
 
