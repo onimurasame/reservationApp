@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hcl.reservationApp.bean.Reservation;
-import com.hcl.reservationApp.service.ReservationService;
+import com.hcl.reservationApp.service.IReservationService;
+import com.hcl.reservationApp.service.impl.ReservationServiceImpl;
 
 /**
  * @author rastudillo
@@ -20,9 +21,10 @@ public class ReservationRestController {
 
 	@RequestMapping(value = "/reservations", method = RequestMethod.GET)
 	public List<Reservation> getReservations() {
-		ReservationService service = new ReservationService();
+		IReservationService service = new ReservationServiceImpl();
 		
 		log.info("Getting reservations...");
+		
 		return service.findAllReservations();
 	}
 }
