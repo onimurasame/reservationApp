@@ -5,19 +5,30 @@ package com.hcl.reservationApp.bean;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
- * @author onimu
+ * @author rastudillo
  *
  */
+@Entity
 public class Transit {
 
-	private Integer id;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
 	private String name;
 	private Boolean isTransfer;
 	private Date start;
 	private Date end;
 	private Integer slots;
 
+	/**
+	 * 
+	 */
 	public Transit() {
 
 	}
@@ -29,7 +40,7 @@ public class Transit {
 	 * @param start
 	 * @param end
 	 */
-	public Transit(Integer id, String name, Boolean isTransfer, Date start, Date end) {
+	public Transit(Long id, String name, Boolean isTransfer, Date start, Date end) {
 		this.id = id;
 		this.name = name;
 		this.isTransfer = isTransfer;
@@ -40,7 +51,7 @@ public class Transit {
 	/**
 	 * @return the id
 	 */
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -48,7 +59,7 @@ public class Transit {
 	 * @param id
 	 *            the id to set
 	 */
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

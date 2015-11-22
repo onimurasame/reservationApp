@@ -24,19 +24,19 @@ public class ReservationDummy {
 		List<Reservation> reservationList = new ArrayList<Reservation>();
 
 		try {
-			Transit location1A = new Transit(0, "JetBlue", false, sdf.parse(DATE + "0700"), sdf.parse(DATE + "0900"));
+			Transit location1A = new Transit(null, "JetBlue", false, sdf.parse(DATE + "0700"), sdf.parse(DATE + "0900"));
 			List<Transit> itinerary1 = new ArrayList<>();
 			itinerary1.add(location1A);
-			Reservation reservation1 = new Reservation(0, 300, "LGA", "FLL", itinerary1);
+			Reservation reservation1 = new Reservation(null, 300, "LGA", "FLL", itinerary1);
 			
-			Transit location2A = new Transit(0, "United", false, sdf.parse(DATE + "0700"), sdf.parse(DATE + "0720"));
-			Transit location2B = new Transit(0, "IAD", true, sdf.parse(DATE + "0720"), sdf.parse(DATE + "0840"));
-			Transit location2C = new Transit(0, "United", false, sdf.parse(DATE + "0840"), sdf.parse(DATE + "1110"));
+			Transit location2A = new Transit(null, "United", false, sdf.parse(DATE + "0700"), sdf.parse(DATE + "0720"));
+			Transit location2B = new Transit(null, "IAD", true, sdf.parse(DATE + "0720"), sdf.parse(DATE + "0840"));
+			Transit location2C = new Transit(null, "United", false, sdf.parse(DATE + "0840"), sdf.parse(DATE + "1110"));
 			List<Transit> itinerary2 = new ArrayList<>();
 			itinerary2.add(location2A);
 			itinerary2.add(location2B);
 			itinerary2.add(location2C);
-			Reservation reservation2 = new Reservation(0, 300, "JFK", "MIA", itinerary2);
+			Reservation reservation2 = new Reservation(null, 300, "JFK", "MIA", itinerary2);
 			
 			
 			reservationList.add(reservation1);

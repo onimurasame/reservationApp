@@ -19,4 +19,20 @@ public interface IReservationService {
 	 * @return list of reservations
 	 */
 	public List<Reservation> findAllReservations();
+	
+	/**
+	 * Creates new reservation
+	 * 
+	 * @param reservation to be persisted
+	 * @return reservation persisted
+	 */
+	public Reservation saveReservation(Reservation reservation);
+	
+	/**
+	 * Creates a batch of reservations
+	 * 
+	 * @param reservations to be persisted
+	 * @return reservations persisted
+	 */
+	public List<Reservation> saveReservations(List<Reservation> reservations);
 }

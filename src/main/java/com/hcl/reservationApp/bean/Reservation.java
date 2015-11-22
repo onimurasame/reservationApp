@@ -2,18 +2,37 @@ package com.hcl.reservationApp.bean;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
 /**
  * @author rastudillo
  *
  */
+@Entity
 public class Reservation {
 	
-	private Integer id;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
 	private	Integer price;
 	private String startingPoint;
 	private String endingPoint;
+	@OneToMany(cascade = {CascadeType.ALL})
+	@JoinColumn(name="idReservation")
 	private List<Transit> itinerary;
 	
+	/**
+	 * 
+	 */
+	public Reservation() {
+	}
+
 	/**
 	 * @param id
 	 * @param price
@@ -21,7 +40,7 @@ public class Reservation {
 	 * @param endingPoint
 	 * @param itinerary
 	 */
-	public Reservation(Integer id, Integer price, String startingPoint, String endingPoint, List<Transit> itinerary) {
+	public Reservation(Long id, Integer price, String startingPoint, String endingPoint, List<Transit> itinerary) {
 		this.id = id;
 		this.price = price;
 		this.startingPoint = startingPoint;
@@ -32,14 +51,14 @@ public class Reservation {
 	/**
 	 * @return the id
 	 */
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -98,5 +117,12 @@ public class Reservation {
 	public void setItinerary(List<Transit> itinerary) {
 		this.itinerary = itinerary;
 	}
+	
+	@Override
+    public String toString() {
+        return String.format(
+                "Customer[id=%d, price='%s', startingPoint='%s', endingPoint='%s']",
+                id, price, startingPoint, endingPoint);
+    }
 	
 }
