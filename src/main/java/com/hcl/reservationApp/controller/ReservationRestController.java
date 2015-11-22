@@ -13,6 +13,7 @@ import com.hcl.reservationApp.bean.Reservation;
 import com.hcl.reservationApp.dummy.ReservationDummy;
 import com.hcl.reservationApp.service.IReservationService;
 
+
 /**
  * @author rastudillo
  *
@@ -46,8 +47,10 @@ public class ReservationRestController {
 	}
 
 	@RequestMapping(value = "/reservations", method = RequestMethod.GET)
-	public List<Reservation> getReservations() {		
+	public List<Reservation> getReservations() {
+
 		log.info("Getting reservations...");
+		
 		return service.findAllReservations();
 	}
 }

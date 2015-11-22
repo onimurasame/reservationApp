@@ -13,11 +13,13 @@ import com.hcl.reservationApp.service.IReservationService;
  * @author rastudillo
  *
  */
+
 @Service
 public class ReservationServiceImpl implements IReservationService {
 	
 	@Autowired(required = true)
 	IReservationRepository repository;
+
 
 	/* (non-Javadoc)
 	 * @see com.hcl.reservationApp.service.IReservationService#findAllReservations()
@@ -36,5 +38,4 @@ public class ReservationServiceImpl implements IReservationService {
 	public List<Reservation> saveReservations(List<Reservation> reservations) {
 		return (List<Reservation>) repository.save(reservations);
 	}
-	
 }
